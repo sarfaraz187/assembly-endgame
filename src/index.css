@@ -15,7 +15,6 @@ body {
 
 header {
   width: 352px;
-  height: 36px;
   gap: 0px;
   opacity: 0px;
 }
@@ -40,4 +39,25 @@ header p {
   text-underline-position: from-font;
   text-decoration-skip-ink: none;
   color: #8e8e8e;
+}
+
+.status-bar {
+  color: white;
+  background: #10a95b;
+  height: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  margin-bottom: 30px;
+}
+
+.status-bar h2 {
+  margin: 0;
+  font-size: 20px;
+}
+
+.status-bar p {
+  margin: 0;
 }
