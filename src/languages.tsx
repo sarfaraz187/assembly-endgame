@@ -1,4 +1,10 @@
-export const languages = [
+type TLanguage = {
+  name: string;
+  backgroundColor: string;
+  color: string;
+};
+
+export const languages: TLanguage[] = [
   {
     name: "HTML",
     backgroundColor: "#E2680F",

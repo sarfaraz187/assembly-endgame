@@ -61,3 +61,22 @@ header p {
 .status-bar p {
   margin: 0;
 }
+
+.language-chips {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 5px;
+  max-width: 350px;
+}
+
+.chips {
+  font-size: 14px;
+  font-weight: 700;
+  height: 25px;
+  padding: 4.5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+}
