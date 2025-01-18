@@ -18,13 +18,15 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  height: 100%;
 }
 
 header {
   width: 352px;
-  margin: 0px auto 30px auto;
+  margin: 0px auto;
+  margin-bottom: 30px;
   gap: 0px;
-  opacity: 0px;
+  opacity: 0p;
 }
 
 header div {
@@ -49,27 +51,39 @@ header p {
   color: #8e8e8e;
 }
 
-.status-bar {
+.game-status {
   color: white;
-  background: #10a95b;
   height: 60px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   border-radius: 4px;
-  margin: auto auto 30px auto;
+  margin: 0px auto;
+  margin-bottom: 30px;
   width: 100%;
   max-width: 350px;
 }
 
-.status-bar h2 {
+.farewell {
+  background: #7a5ea7;
+}
+
+.game-status h2 {
   margin: 0;
   font-size: 20px;
 }
 
-.status-bar p {
+.game-status p {
   margin: 0;
+}
+
+.won {
+  background: #10a95b;
+}
+
+.lost {
+  background: #ec5d49;
 }
 
 .language-chips {
@@ -78,18 +92,30 @@ header p {
   justify-content: center;
   gap: 5px;
   max-width: 350px;
-  margin: auto auto 30px auto;
+  margin: 0px auto;
+  margin-bottom: 30px;
 }
 
-.chips {
-  font-size: 14px;
-  font-weight: 700;
-  height: 25px;
+span.chip {
+  border-radius: 3px;
   padding: 4.5px;
+  position: relative;
+  font-size: 14px;
+}
+
+/* Dimmed overlay with skull on "lost" languages */
+span.chip.lost::before {
+  content: "💀";
+  position: absolute;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 4px;
+  height: 100%;
+  width: 100%;
+  font-size: 0.85rem;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.7);
 }
 
 .word-display-container {
@@ -97,7 +123,8 @@ header p {
   flex-wrap: wrap;
   gap: 2px;
   justify-content: center;
-  margin: auto auto 30px auto;
+  margin: 0px auto;
+  margin-bottom: 30px;
 }
 
 .word-display {
@@ -139,6 +166,11 @@ header p {
   &:hover {
     opacity: 0.5;
   }
+}
+
+.alphabet-container button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
 }
 
 .alphabet-container button.wrong {
