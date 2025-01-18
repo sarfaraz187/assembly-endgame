@@ -6,10 +6,12 @@ import { useState } from "react";
 function App() {
   const [currentWord, setCurrentWord] = useState<string>("Hello");
 
+  const alphabets = "abcdefghijklmnopqrstuvwxyz";
+
   return (
-    <>
+    <main>
       <Header />
-      <main>
+      <section>
         <div className="status-bar">
           <h2>You Win</h2>
           <p>Well Done!</p>
@@ -22,12 +24,22 @@ function App() {
           ))}
         </div>
         <div className="word-display-container">
-          {currentWord.split("").map((letter) => (
-            <span className="word-display">{letter}</span>
+          {currentWord.split("").map((letter, index) => (
+            <span key={index} className="word-display">
+              {letter}
+            </span>
           ))}
         </div>
-      </main>
-    </>
+
+        <div className="alphabet-container">
+          {alphabets.split("").map((letter, index) => (
+            <button key={index} style={{ background: "#FCBA29" }}>
+              {letter.toUpperCase()}
+            </button>
+          ))}
+        </div>
+      </section>
+    </main>
   );
 }
 
